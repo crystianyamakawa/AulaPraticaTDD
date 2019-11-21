@@ -1,7 +1,16 @@
-
-public  class Dollar {
-        int amount = 10;
-        Dollar(int amount) {}			
-        void times(int multiplier) {}
-     }
-
+class Dollar extends Money {
+   //int amount;
+   Dollar(int amount) {
+      this.amount= amount;
+   }
+   Dollar times(int multiplier) {
+      Dollextends ar d = new Dollar(amount * multiplier);
+      
+      return d;
+   }
+   @Override
+   public boolean equals(Object object)  {
+	   Dollar dollar = (Dollar) object;
+	   return amount == dollar.amount;
+	}
+}	
