@@ -1,5 +1,5 @@
 class Dollar extends Money {
-	 private String currency;
+
 	 Dollar(int amount, String currency)  {
 	      super(amount, currency);
 	   }
@@ -15,7 +15,10 @@ class Dollar extends Money {
 	   
    @Override
    public boolean equals(Object object)  {
-	   Dollar dollar = (Dollar) object;
-	   return amount == dollar.amount;
+	   if (object instanceof Dollar) {
+		   Dollar dollar = (Dollar) object;
+		   return amount == dollar.amount;
+	   }
+	   return false;
 	}
 }	

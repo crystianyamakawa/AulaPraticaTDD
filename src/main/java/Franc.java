@@ -1,7 +1,6 @@
 class Franc extends Money {   
    //private int amount;					
-	
-	  private String currency;
+
 		
 	  Franc(int amount, String currency) {
 	      super(amount, currency);
@@ -16,7 +15,10 @@ class Franc extends Money {
 	   
    
     public boolean equals(Object object) {					
-       Franc franc = (Franc) object;      
-       return amount == franc.amount;					
+       if (object instanceof Franc) {
+    	   Franc franc = (Franc) object;      
+    	   return amount == franc.amount;
+       }
+       return false;
      }					
 }
